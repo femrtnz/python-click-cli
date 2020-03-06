@@ -40,7 +40,11 @@ This script implements a python click CLI where we can query data from the event
 `users                List all the users that have received at least one exam score`
 
 Example:
+
 `./scoresctl.py exams`
+
 `./scoresctl.py exams --id Cielo68`
+
 `./scoresctl.py results --exam 11551`
+
 `./scoresctl.py users`
