@@ -34,9 +34,13 @@ In order to stop the script just press `CTRL + C`. It may take a few seconds but
 This script implements a python click CLI where we can query data from the events.json file.
 
 #### Commands
+
 `exams                List all the exams recorded `
+
 `exams --id <ID>      List all the exams recorded by student ID`
+
 `results --exam 11551 List all the results for a specified exam`
+
 `users                List all the users that have received at least one exam score`
 
 Example:
