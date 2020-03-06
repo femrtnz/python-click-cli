@@ -38,13 +38,13 @@ This script implements a python click CLI where we can query data from the event
 
 #### Commands
 
-`exams                List all the exams recorded `
+`exams`                List all the exams recorded 
 
-`exams --id <ID>      List all the exams recorded by student ID`
+`exams --id <ID>`      List all the exams recorded by student ID
 
-`results --exam 11551 List all the results for a specified exam`
+`results --exam 11551` List all the results for a specified exam
 
-`users                List all the users that have received at least one exam score`
+`users`                List all the users that have received at least one exam score
 
 Example:
 
