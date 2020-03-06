@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
+
 import click
 import json
 
 __author__ = "Felipe Amaral"
-
 filename = "events.json"
 
 
@@ -13,8 +14,7 @@ def list():
 
 @list.command()
 def users():
-    """An operation to list all the users that have
-       received at least one exam score"""
+    """List all the users that have received at least one exam score"""
     users = set()
     with open(filename) as f:
         for line in f:
@@ -26,7 +26,7 @@ def users():
 @list.command()
 @click.option('--id', help="Will search by student ID")
 def exams(id):
-    """An operation to list all the exams"""
+    """List all the exams recorded or by student ID"""
     with open(filename) as f:
         exams = set()
         for line in f:
@@ -42,7 +42,7 @@ def exams(id):
 @list.command()
 @click.option('--exam', help="Will search by exam", required=True, type=int)
 def results(exam):
-    """An operation to list all the results for a specified exam"""
+    """List all the results for a specified exam"""
     with open(filename) as f:
         for line in f:
             loaded = json.loads(line)

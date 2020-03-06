@@ -9,23 +9,37 @@ Periodically, you'll receive a JSON payload that represents a student's test sco
         event: score
         data: {"exam": 3, "studentId": "foo", score: .991}
 
-This represents that student foo received a score of `.991` on exam #3. 
+### Requirements
 
-Your job is to build a script that continuously consumes this data, processes it, and persists it to disk. Additionally, you will need to write another script for querying the persisted data.
+`python 3`
 
-You may write this script in Python or bash/sh. You may also use any open-source libraries/tools or resources that you find helpful. **As part of the exercise, please replace this README file with instructions for building and running your project.** We will run your code as part of our review process.
+`sseclient-py==1.7`  - you can install running `pip3 install -r requirements.tx`
 
-Here are the operations we want your query script to support:
+make sure you run give permission to execute the scripts with
+`chmod +x events.py`
+`chmod +x scoresctl.py`
 
-1. An operation to list all the users that have received at least one exam score.
-2. An operation to list all the exam results for a specified student ID.
-3. An operation to list all the exams that have been recorded.
-4. An operation to list all the results for a specified exam.
+### Get Events
 
-Coding tests are often contrived, and this exercise is no exception. To the best of your ability, make your solution reflect the kind of code you'd want to run on production systems. A few things we're specifically looking for:
+This script will fetch the events from `http://live-test-scores.herokuapp.com/scores`
+and persist into a file called events.json. It will also send the events to `stdout`.
 
-* Well-structured, well-written, idiomatic, safe, performant code. 
-* Ecosystem understanding. Your code should demonstrate that you understand whatever ecosystem you're coding against – including project organization and use of third-party libraries/tools.
-* Thoughtful intention behind the command-line interface and command output.
+In order to stop the script just press `CTRL + C`. It may take a few seconds but it will stop it gracefully.
 
-That's it. Commit your solution to the provided GitHub repository (this one). When you come in, we'll pair with you and walk through your solution and extend it in an interesting way.
+`./events.py`
+
+### Query Events
+
+This script implements a python click CLI where we can query data from the events.json file.
+
+#### Commands
+`exams                List all the exams recorded `
+`exams --id <ID>      List all the exams recorded by student ID`
+`results --exam 11551 List all the results for a specified exam`
+`users                List all the users that have received at least one exam score`
+
+Example:
+./scoresctl.py exams
+./scoresctl.py exams --id Cielo68
+./scoresctl.py results --exam 11551
+./scoresctl.py users
