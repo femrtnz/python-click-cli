@@ -3,6 +3,7 @@ import sseclient
 import signal
 import requests
 
+__author__ = "Felipe Amaral"
 
 filename = 'events.json'
 url = 'http://live-test-scores.herokuapp.com/scores'
