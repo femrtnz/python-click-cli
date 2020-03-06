@@ -21,14 +21,15 @@ make sure you run give permission to execute the scripts with
 
 ### Get Events
 
+`./events.py`
 This script will fetch the events from `http://live-test-scores.herokuapp.com/scores`
 and persist into a file called events.json. It will also send the events to `stdout`.
 
 In order to stop the script just press `CTRL + C`. It may take a few seconds but it will stop it gracefully.
 
-`./events.py`
-
 ### Query Events
+
+`./scoresctl.py`
 
 This script implements a python click CLI where we can query data from the events.json file.
 
@@ -39,7 +40,7 @@ This script implements a python click CLI where we can query data from the event
 `users                List all the users that have received at least one exam score`
 
 Example:
-./scoresctl.py exams
-./scoresctl.py exams --id Cielo68
-./scoresctl.py results --exam 11551
-./scoresctl.py users
+`./scoresctl.py exams`
+`./scoresctl.py exams --id Cielo68`
+`./scoresctl.py results --exam 11551`
+`./scoresctl.py users`
