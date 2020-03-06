@@ -16,12 +16,15 @@ Periodically, you'll receive a JSON payload that represents a student's test sco
 `sseclient-py==1.7`  - you can install running `pip3 install -r requirements.tx`
 
 make sure you run give permission to execute the scripts with
-`chmod +x events.py`
-`chmod +x scoresctl.py`
+```
+chmod +x events.py
+chmod +x scoresctl.py
+```
 
 ### Get Events
 
 `./events.py`
+
 This script will fetch the events from `http://live-test-scores.herokuapp.com/scores`
 and persist into a file called events.json. It will also send the events to `stdout`.
 
